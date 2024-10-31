@@ -1,4 +1,6 @@
-﻿namespace Topic___6_lesson
+﻿using System.Net.Sockets;
+
+namespace Topic___6_lesson
 {
     internal class Program
     {
@@ -79,6 +81,20 @@
             Console.WriteLine("Press Enter to continue");
             Console.ReadLine();
             Console.Clear();
+            Console.WriteLine("Hey man lets play a guessing game.");
+            Console.WriteLine("The number i have picked is between 1 - 10.");
+            Console.WriteLine("Good luck");
+            Console.Write("Enter your answer here: ");
+            Int32.TryParse(Console.ReadLine(), out guess);
+            if (guess == secret)
+            {
+                Console.WriteLine("Yea man good job you got it :)");
+
+            }
+            else
+            {
+                Console.WriteLine("No you're wrong!!!");
+            }
         }
     }
 }
