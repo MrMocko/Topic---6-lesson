@@ -7,7 +7,7 @@ namespace Topic___6_lesson
         static void Main(string[] args)
         {
             Random generator = new Random();
-            int randNum, minimum, maximum;
+            int guess, randNum, minimum, maximum, dice1, dice2;
             randNum = generator.Next(10);
             Console.WriteLine("My random number is " + randNum);
             Console.WriteLine("Here are some numbers from 1 to 5!");
@@ -78,23 +78,36 @@ namespace Topic___6_lesson
             Console.Write(generator.Next(minimum, maximum) + " ");
             Console.Write(generator.Next(minimum, maximum) + " ");
             Console.Write(generator.Next(minimum, maximum) + " ");
+            Console.WriteLine();
             Console.WriteLine("Press Enter to continue");
             Console.ReadLine();
             Console.Clear();
+            randNum = generator.Next(1, 11);
             Console.WriteLine("Hey man lets play a guessing game.");
             Console.WriteLine("The number i have picked is between 1 - 10.");
             Console.WriteLine("Good luck");
             Console.Write("Enter your answer here: ");
             Int32.TryParse(Console.ReadLine(), out guess);
-            if (guess == secret)
+            if (guess == randNum)
             {
-                Console.WriteLine("Yea man good job you got it :)");
+                Console.WriteLine("Yea man good job you got it, it was: " + randNum);
 
             }
             else
             {
-                Console.WriteLine("No you're wrong!!!");
+                Console.WriteLine("No you're wrong the answer was: " + randNum);
             }
+            Console.WriteLine("Press Enter to continue");
+            Console.ReadLine();
+            Console.Clear();
+            dice1 = generator.Next();
+            dice2 = generator.Next();
+            Console.WriteLine("Ok i am going to roll 2 die and tell you what they were and add them together.");
+            Console.WriteLine("Time to roll the die");
+            Console.Write("Here is what you rolled: ");
+            Console.Write(generator.Next(1, 7) + " " + generator.Next(1,7) + " ");
+            Console.WriteLine();
+            Console.WriteLine("Now i'm going to add them together " + dice1 + dice2);
         }
     }
 }
