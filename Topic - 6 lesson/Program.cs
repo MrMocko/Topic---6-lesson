@@ -100,14 +100,19 @@ namespace Topic___6_lesson
             Console.WriteLine("Press Enter to continue");
             Console.ReadLine();
             Console.Clear();
-            dice1 = generator.Next();
-            dice2 = generator.Next();
+            dice1 = generator.Next(1,7);
+            dice2 = generator.Next(1, 7);
             Console.WriteLine("Ok i am going to roll 2 die and tell you what they were and add them together.");
             Console.WriteLine("Time to roll the die");
+            Thread.Sleep(1000);
             Console.Write("Here is what you rolled: ");
-            Console.Write(generator.Next(1, 7) + " " + generator.Next(1,7) + " ");
+            Console.Write(dice1 + " " + dice2 + " ");
+            Thread.Sleep(1000);
             Console.WriteLine();
-            Console.WriteLine("Now i'm going to add them together " + dice1 + dice2);
+            Console.Write("Now i'm going to add them together: ");
+            Thread.Sleep(1000);
+            Console.WriteLine(dice1 + dice2);
+            Console.ReadLine();
         }
     }
 }
